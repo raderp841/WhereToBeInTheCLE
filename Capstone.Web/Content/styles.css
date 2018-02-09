@@ -1,0 +1,393 @@
+﻿body {
+    margin-top: 50px;
+}
+
+.index-destinations a {
+    text-decoration: none;
+    color: black;
+}
+.index-destinations a:hover {
+    text-decoration: underline;
+    color: black;
+}
+    .index-destinations a:visited {
+        text-decoration: none;
+        color: black;
+    }
+
+.itin-container {
+    /*border: 1px solid black;*/
+    border-radius: 5px;
+    background-color: lightgray;
+    margin: 20px 0px;
+}
+
+.itin-item {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    margin: 10px 0px;
+}
+
+    .itin-item li {
+        list-style-type: none;
+    }
+
+    .itin-item img {
+        width: 150px;
+        height: auto;
+        margin-top: 10px;
+    }
+
+
+.partial-view-container {
+    background-color: red;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.partial-view {
+    border: 1px solid black;
+    background-color: lightgrey;
+}
+
+    .partial-view ul {
+        list-style-type: none;
+    }
+
+
+.index-hero {
+    background-image: url(cle-skyline-night.jpeg);
+    background-size: cover;
+    background-position: bottom;
+    color: white;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    font-family: 'Coda Caption', sans-serif;
+}
+
+    .index-hero p {
+        font-size: 30px;
+    }
+
+.poly-productions a {
+    text-decoration: none;
+    color: black;
+}
+
+.poly-productions {
+    color: black;
+}
+
+    .poly-productions a:hover {
+        text-decoration: underline;
+        color: black;
+    }
+
+    .poly-productions:visited {
+        text-decoration: none;
+        color: black;
+    }
+
+.login {
+    background-image: url(lebron-435x768.jpg);
+    background-size: cover;
+    background-position: top, center;
+    background-repeat: no-repeat;
+    color: black;
+    padding-top: 5%;
+    padding-bottom: 30%;
+}
+
+    .login h3 {
+        color: white;
+    }
+/*.login{
+        min-height:700px;
+       /*max-width: 95%;*/
+/*margin: 0px auto;*/
+/*background-color: tomato;
+    }*/
+.create-itinerary-hero {
+    background-image: url(cleveland-sign.png);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding-top: 5%;
+    padding-bottom: 35%;
+    font-family: 'Coda Caption', sans-serif;
+}
+
+.dashboard-hero {
+    background-image: url(cleveland-skyline-lakeview.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding-top: 15%;
+    padding-bottom: 20%;
+    font-family: 'Coda Caption', sans-serif;
+}
+
+.entertainment-hero {
+    background-image: url(playhouse-square.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding-top: 15%;
+    padding-bottom: 20%;
+    font-family: 'Coda Caption', sans-serif;
+}
+
+.landmarks-hero {
+    background-image: url(public-square-terminal-1920x1281.jpg);
+    background-size: cover;
+    background-position: top;
+    color: white;
+    padding-top: 15%;
+    padding-bottom: 20%;
+    font-family: 'Coda Caption', sans-serif;
+}
+
+.restaurant-hero {
+    background-image: url(michael-symons-mabels-hero-.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding-top: 15%;
+    padding-bottom: 20%;
+    font-family: 'Coda Caption', sans-serif;
+}
+
+.shopping-hero {
+    background-image: url(tower-city-xmas.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding-top: 15%;
+    padding-bottom: 20%;
+    font-family: 'Coda Caption', sans-serif;
+}
+
+.sports-hero {
+    background-image: url(quicken-loans2.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding-top: 15%;
+    padding-bottom: 20%;
+    font-family: 'Coda Caption', sans-serif;
+}
+
+.hero-text-drop-shadow {
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
+}
+
+.desc-bump {
+    margin: 10px auto;
+}
+
+.desc-bump-20 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.landmark-detail {
+    text-align: center;
+}
+
+span.field-validation-error {
+    color: red;
+    background-color: black;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+    span.field-validation-error::before {
+        content: "\A";
+        white-space: pre;
+        margin-top: 20px;
+    }
+
+.register {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.detail {
+    min-height: 80px;
+}
+
+#my_popup {
+    transform: scale(0.8);
+}
+
+.popup_visible #my_popup {
+    transform: scale(1);
+}
+
+.testing {
+    background-color: maroon;
+    opacity: .9;
+    color: white;
+    width: 400px;
+    height: 400px;
+
+}
+
+#intinPartHeader {
+    font-family: 'Coda Caption', sans-serif;
+    font-size: 70px;
+    color: maroon;
+}
+
+.itinPartDetail {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.4);
+    
+}
+
+    .itinPartDetail:focus {
+        border: 3px solid #555;
+    }
+
+.itinName {
+    font-family: 'Coda Caption', sans-serif;
+}
+
+.detailHeader {
+    font-size: 50px;
+}
+
+
+.sortingPanels {
+    background-color: lightgrey;
+    margin-bottom: 20px;
+    border-top: 1px solid black;
+}
+
+.route {
+    font-size: 25px;
+}
+
+.createItinDiv {
+    padding-bottom: 20px;
+}
+
+.deleteDiv {
+   padding-right: 1.5%;
+
+}
+/*index map*/
+#map-canvas {
+    width: 100%;
+    height: 600px;
+}
+
+.controls {
+    margin-top: 50px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    max-width: 300px;
+}
+
+#pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 400px;
+}
+
+    #pac-input:focus {
+        border-color: #4d90fe;
+    }
+
+.pac-container {
+    font-family: Roboto;
+}
+
+#type-selector {
+    color: #fff;
+    background-color: #4d90fe;
+    padding: 5px 11px 0px 11px;
+}
+
+    #type-selector label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+    }
+
+#target {
+    width: 345px;
+}
+
+/*Media Queries*/
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    .controls {
+        margin-top: 16px;
+        border: 1px solid transparent;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        height: 32px;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        max-width: 400px;
+    }
+
+    .login {
+        background-image: url(lebron-1024x768.jpg);
+        background-size: cover;
+        background-position: top, center;
+        background-repeat: no-repeat;
+        padding-top: 15%;
+        padding-bottom: 30%;
+    }
+
+    .landmark-detail {
+        text-align: left;
+    }
+
+    span.field-validation-error::before {
+        content: "\A";
+        white-space: pre;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+    .login {
+        background-image: url(lebron-1024x768.jpg);
+        background-size: cover;
+        background-position: top, center;
+        background-repeat: no-repeat;
+        padding-top: 5%;
+        padding-bottom: 30%;
+    }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+    .login {
+        background-image: url(lebron-1920x1440.jpg);
+        background-size: cover;
+        background-position: center, top;
+        background-repeat: no-repeat;
+        padding-top: 15%;
+        padding-bottom: 20%;
+    }
+}

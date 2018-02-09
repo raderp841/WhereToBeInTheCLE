@@ -1,0 +1,108 @@
+﻿@using Capstone.Web.Models
+@model List<ItineraryPlacesModel>
+
+@{
+    ViewBag.Title = "UserDashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<int> order = new List<int>();
+    UserModel user = Session["user"] as UserModel;
+}
+
+<script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
+<script type="text/javascript">
+    window.onload = function () {
+        loadMap();
+    }
+</script>
+
+<div class="dashboard-hero jumbotron">
+    <div class="container text-center">
+        <h1 class="h1 text-uppercase hero-text-drop-shadow">@user.FirstName's Dashboard</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 text-center createItinDiv">
+            <h2 class="detailHeader">Your Itineraries</h2>
+            <button class="my_popup_open btn-lg">Create New Itinerary</button>
+        </div>
+
+        <div id="my_popup">
+            @Html.Action("CreateItinPartial", "Home")
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 accordion">
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <h3 class="itinName">@Model[i].Itinerary.Name</h3>
+                    <div>
+                        <form action="@Url.Action("DeleteItinerary", "Home", new { itineraryId = Model[i].Itinerary.Id })" method="post">
+                            <div class="row text-right deleteDiv">
+                                <a href="#" data-toggle="modal" data-target="#basicModal"><button class="btn btn-xs">Delete Itinerary</button></a>
+                            </div>
+                            <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="myModalLabel">Delete Itinerary</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h2>Are you sure you want to delete?</h2>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">No, DONT Delete</button>
+                                            <form action="@Url.Action("DeleteItinerary", "Home", new { itineraryId = Model[0].Itinerary.Id })" method="post">
+                                                <button id="iHateModals" type="button" class="btn btn-primary" data-dismiss="modal" data-id="@Model[0].Itinerary.Id">Yes!</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <form>
+                            <input class="btn btn-xs" type="submit" name="save" value="Save Itinerary" formaction="@Url.Action("EditUserItinerary", "Home", new { itineraryId = Model[i].Itinerary.Id })" formmethod="post" />
+                            <input id="goToRoute" class="btn btn-xs" type="submit" name="route" value="See Travel Route" formaction="@Url.Action("CreateTravelRoute", "Home", new { itineraryId = Model[i].Itinerary.Id })" formmethod="post" />
+                            <div id="sortable" class="row itin-container sortableItems">
+                                @{ var counter = 0; }
+                                @{ var counter2 = 1;}
+                                @foreach (var t in Model[i].Places)
+                                {
+                                    <div class="col-xs-12 sortingPanels">
+                                        <input type="hidden" name="placeIds[@counter]" value="@t.Id" />
+                                        <h2><b>Stop @counter2: @t.PlaceName</b></h2>
+                                        @*<h4></h4>*@
+                                        <p>@t.StreetAddress @t.City , @t.State @t.Zip</p>
+                                        <p>@t.Detail</p>
+                                        <form action="@Url.Action("DeletePlaceFromItinerary", "Home", new { placeId = t.Id, itineraryId = Model[i].Itinerary.Id })" method="post">
+                                            <input type="submit" name="remove" value="Remove from Itinerary" formaction="@Url.Action("DeletePlaceFromItinerary", "Home", new { placeId = t.Id, itineraryId = Model[i].Itinerary.Id })" formmethod="post" />
+                                        </form>
+                                    </div>
+                                    counter++;
+                                    counter2++;
+                                }
+                            </div>
+                        </form>
+                    </div>
+
+                                    }
+        </div>
+    </div>
+
+    <h1 class="text-center">Click on the map to add a location to your itinerary.</h1>
+
+    <div class="col-xs-12">
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="dvMap" style="width: 100%; height: 500px">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+
+
